@@ -1,1 +1,14 @@
-<%= @tweets %>
+<% @tweets.each do |tweet| %>
+<p>
+<% if tweet.attrs[:in_reply_to_user_id] == nil %>
+<%= tweet.attrs[:text] %><br />
+<% end %>
+</p>
+<% end %>
+
+
+<% @tweets.each do |tweet| %>
+<p>
+<%= tweet.attrs %>
+</p>
+<% end %>
