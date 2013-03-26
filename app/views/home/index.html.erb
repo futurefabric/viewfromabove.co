@@ -1,15 +1,24 @@
 <% @tweets.each do |tweet| %>
 
-	<% tweet_media = tweet.attrs[:entities][:media] %>
-	<% if tweet_media != nil %>
-		<!-- <h1><%= tweet.attrs[:text] %></h1> -->
-		<% image_path = tweet_media.first[:media_url] %>
-		<%= image_tag(image_path, :width => 400) %>
-	<% end %>
-	
+<% tweet_media = tweet.attrs[:entities][:media] %>
+<% if tweet_media != nil %>
+	<% image_path = tweet_media.first[:media_url] %>
+	<div class="photo_tweet">
+	<!-- <p><% tweet.attrs[:text] %></p> -->
+	<%= image_tag(image_path, :width => 400) %>
+	</div>
+<% end %>
+
 <% end %>
 
 
-<% @tweets.each do |tweet| %>
-<% #tweet.attrs.to_yaml %>
-<% end %>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-902179-20', 'herokuapp.com');
+ga('send', 'pageview');
+
+</script>
