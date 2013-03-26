@@ -4,7 +4,7 @@
 	<% if tweet_media != nil %>
 		<!-- <h1><%= tweet.attrs[:text] %></h1> -->
 		<% image_path = tweet_media.first[:media_url] %>
-		<%= image_tag(image_path) %>
+		<%= image_tag(image_path, :width => 400) %>
 	<% end %>
 	
 <% end %>
