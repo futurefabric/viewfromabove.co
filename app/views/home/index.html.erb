@@ -1,14 +1,15 @@
 <% @tweets.each do |tweet| %>
-<p>
-<% if tweet.attrs[:in_reply_to_user_id] == nil %>
-<%= tweet.attrs[:text] %><br />
-<% end %>
-</p>
+
+	<% tweet_media = tweet.attrs[:entities][:media] %>
+	<% if tweet_media != nil %>
+		<!-- <h1><%= tweet.attrs[:text] %></h1> -->
+		<% image_path = tweet_media.first[:media_url] %>
+		<%= image_tag(image_path) %>
+	<% end %>
+	
 <% end %>
 
 
 <% @tweets.each do |tweet| %>
-<p>
-<%= tweet.attrs %>
-</p>
+<% #tweet.attrs.to_yaml %>
 <% end %>
