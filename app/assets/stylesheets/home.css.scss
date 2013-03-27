@@ -64,10 +64,28 @@ ul.tweets li {
 	left: 0;
 }
 
+.tweet_media:hover {
+
+	cursor: pointer;
+
+	.tweet {
+		-webkit-transition: opacity .15s ease;
+    -moz-transition: opactiy .15s ease;
+    -ms-transition: opacity .15s ease;
+    -o-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+		opacity: 1;
+	}
+}
+
 .tweet {
 	display:block;
 	// height:90px;
-	display: none;
+	background-color: $background;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	opacity: 0;
 }
 
 
