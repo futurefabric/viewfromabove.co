@@ -1,41 +1,36 @@
 <h1>The View from Above</h1>
 
+<ul class="tweets">
 <% @tweets.each do |tweet| %>
-
 <% tweet_media = tweet.attrs[:entities][:media] %>
 <% if tweet_media != nil %>
-	<% image_path = tweet_media.first[:media_url] %>
-	<div class="tweet_media">
-	<div class="tweet">
-	<p>
-	<%= tweet.attrs[:text] %><br />
-	<% tweet_id = tweet.attrs[:id].to_s %>
-	<% status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id %>
-	<%= link_to("∞", status_link) %>
-	</p>
-	</div>
-	<%= image_tag(image_path, :width => 400) %>
-	</div>
-<% end %>
+
+<% image_path = tweet_media.first[:media_url] %>
+<li>
+<div class="aspectwrapper">
+<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-size: 100% 100%;">
+<% # image_tag(image_path) %>
+</div>
+
+<!-- <div class="tweet">
+<p>
+<%= tweet.attrs[:text] %><br />
+Retweets: <%= tweet.attrs[:retweet_count] %><br />
+Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
+Dated: <%= tweet.attrs[:created_at] %><br/>
+
+<% tweet_id = tweet.attrs[:id].to_s %>
+<% status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id %>
+<%= link_to("∞", status_link) %>
+</p>
+</div> -->
+
+
+
+
+</div>
+</li>
 
 <% end %>
-
-
-
-
-<% @tweets.each do |tweet| %>
-<%= tweet.to_yaml %>
 <% end %>
-
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-902179-20', 'herokuapp.com');
-ga('send', 'pageview');
-
-</script>
+</ul>

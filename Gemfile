@@ -27,6 +27,8 @@ group :assets do
 
   gem 'compass-rails'
   # Add any compass extensions here
+  gem 'zurb-foundation'
+  
   
 end
 
