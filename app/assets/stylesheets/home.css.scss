@@ -50,7 +50,7 @@ ul.tweets li {
 	position: relative;
 }
 
-.aspectwrapper::after {
+.aspectwrapper:after {
 	padding-top: 66%;
 	display: block;
 	content: '';
