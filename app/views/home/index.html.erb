@@ -7,7 +7,10 @@
 <% id_str = tweet.attrs[:id].to_s; %>
 <% if id_str != "316975738584711168" and id_str != "316626544862846976" and id_str != "316621978981257216" and id_str != "31542498007672832" and id_str != "315424980076728321" and id_str != "313658219555848192"and id_str != "313627318130196483" and id_str != "313200150711529473" and id_str != "315009913283813376" and id_str != "314655596722933760" and id_str != "317054613901684737" %>
 <% image_path = tweet_media.first[:media_url] %>
+<% tweet_id = tweet.attrs[:id].to_s %>
+<% status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id %>
 <li>
+<a href="<%= status_link %>" target="_blank">
 <div class="aspectwrapper">
 <div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-size: 100% 100%;">
 <% # image_tag(image_path) %>
@@ -19,8 +22,7 @@
 Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
 Dated: <%= tweet.attrs[:created_at] %><br/> -->
 
-<% tweet_id = tweet.attrs[:id].to_s %>
-<% status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id %>
+
 <!--<%= tweet_id %>-->
 <% # status_link %>
 <% # link_to("∞", status_link) %>
@@ -33,6 +35,7 @@ Dated: <%= tweet.attrs[:created_at] %><br/> -->
 
 
 </div>
+</a>
 </li>
 
 <% end %>
