@@ -24,10 +24,12 @@ a {
 	color: $links;
 }
 h1 {
-	font-size: 1.7em;
+	font-size: 1.3em;
 	font-weight: 600;
 	padding: 20px;
 	color: $heading;
+
+	@media screen and (min-width: 600px) { font-size: 1.7em; }
 }
 
 p {
@@ -43,6 +45,7 @@ ul.tweets li {
 
 	@media screen and (min-width: 600px) { width: 50%; }
 	@media screen and (min-width: 1200px) { width: 33.33333333333%; }
+	@media screen and (min-width: 1800px) { width: 25%; }
 }
 
 .aspectwrapper {
