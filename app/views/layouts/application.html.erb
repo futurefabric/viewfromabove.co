@@ -12,10 +12,19 @@
 <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body class="<%= @body_class %>">
+<nav>
+<ul>
+<li><%= link_to('The Gallery', root_path) %></li>
+<li><%= link_to('About this site', root_path + 'about') %></li>
+</ul>
+</nav>
 
 <%= yield %>
 
+<footer>
+<p>A work in progress by <%= link_to('@Futurefabric', 'http://twitter.com/Futurefabric') %></p>
+</footer>
 <%= javascript_include_tag "application" %>
 </body>
 </html>

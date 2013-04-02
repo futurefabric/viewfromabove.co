@@ -1,8 +1,14 @@
 Hadfield::Application.routes.draw do
 
   get "home/index"
+  get "home/max_id"
+  get "about/index"
+  get "references/index"
 
   root :to => 'home#index'
+  match 'references' => 'references#index'
+  match "from/:max_id/" => "home#index"
+  match "about" => "about#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
