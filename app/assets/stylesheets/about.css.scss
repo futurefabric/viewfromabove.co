@@ -1,0 +1,37 @@
+// Place all the styles related to the About controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "vars";
+
+.about {
+	h1 {
+		font-size: 1em;
+		font-weight: 400;
+		padding: 20px;
+		color: $body;
+		text-transform: uppercase;
+		@media screen and (min-width: 600px) { font-size: 1em; }
+	}
+
+	h2 {
+		max-width: 850px;
+		font-size: 2em;
+		font-weight: 600;
+		padding: 20px;
+		color: $heading;
+		@media screen and (min-width: 600px) { font-size: 2.5em; }
+	}
+
+	p {
+		font-size: 1.5em;
+		font-weight: 400;
+		padding:20px;
+		max-width:590px;
+	}
+
+	footer p {
+		font-size: 1em;
+	}
+}

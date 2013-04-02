@@ -1,0 +1,65 @@
+<h1>The View from Above</h1>
+
+<ul class="tweets">
+
+<% 
+counter = 0
+images_per_page = 24
+last_id = ''
+%>
+
+<% @tweets.each do |tweet|
+
+tweet_media = tweet.attrs[:entities][:media]
+
+	if counter < images_per_page
+
+		if tweet_media != nil
+			id_str = tweet.attrs[:id].to_s
+			blacklisted = blacklisted_tweet_ids(id_str)
+			
+			if blacklisted != true
+
+				# we can show the tweet! it has media and isn't blacklisted :)
+				# increment the counter
+				counter += 1
+
+				image_path = tweet_media.first[:media_url]
+				tweet_id = tweet.attrs[:id].to_s
+				status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id
+
+%>
+
+<li>
+	<a href="<%= status_link %>" target="_blank">
+		<div class="aspectwrapper">
+			<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-size: 100% 100%;">
+				<div class="tweet">
+				<p><%= tweet.attrs[:text] %></p>
+				<!-- 
+				<br />
+				Retweets: <%= tweet.attrs[:retweet_count] %><br />
+				Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
+				Dated: <%= tweet.attrs[:created_at] %><br/> 
+				-->
+				</div>
+			</div>
+		</div>
+	</a>
+</li>
+
+			<% end %>
+		<% end %>
+	<% end
+
+	if counter == (images_per_page + 1)
+		last_id = tweet.attrs[:id].to_s
+		break
+	end
+
+	%>
+<% end %>
+</ul>
+
+<h1><%= link_to('Older photos','from/' + last_id) %></h1>
+
