@@ -5,7 +5,8 @@
 <% tweet_media = tweet.attrs[:entities][:media] %>
 <% if tweet_media != nil %>
 <% id_str = tweet.attrs[:id].to_s; %>
-<% if id_str != "316975738584711168" and id_str != "316626544862846976" and id_str != "316621978981257216" and id_str != "31542498007672832" and id_str != "315424980076728321" and id_str != "313658219555848192"and id_str != "313627318130196483" and id_str != "313200150711529473" and id_str != "315009913283813376" and id_str != "314655596722933760" and id_str != "317054613901684737" %>
+<% # aspect ratio issues: 318477785662365696 %>
+<% if id_str != "316975738584711168" and id_str != "316626544862846976" and id_str != "316621978981257216" and id_str != "31542498007672832" and id_str != "315424980076728321" and id_str != "313658219555848192"and id_str != "313627318130196483" and id_str != "313200150711529473" and id_str != "315009913283813376" and id_str != "314655596722933760" and id_str != "317054613901684737" and id_str != "318806874935939074" and id_str != "318705878838702080" and id_str != "318640649509425152" and id_str != "318385254186496000" and id_str != "318280266747617280" and id_str != "318477785662365696" and id_str != "318435309706702848" and id_str != "318839597624872960" and id_str != "318461873869692928" %>
 <% image_path = tweet_media.first[:media_url] %>
 <% tweet_id = tweet.attrs[:id].to_s %>
 <% status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id %>
