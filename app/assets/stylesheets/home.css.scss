@@ -79,6 +79,10 @@
 		@media screen and (min-width: 600px) { opacity: 0; }
 	}
 
+	.dated {
+		color:$links_standout;
+	}
+
 	.pagination {
 		margin-top: 20px;
 	}

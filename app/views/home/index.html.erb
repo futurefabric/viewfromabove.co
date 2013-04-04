@@ -35,8 +35,8 @@ tweet_media = tweet.attrs[:entities][:media]
 		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
 			<div class="tweet">
 				<p><%= tweet.attrs[:text] %><br />
-					<% t = Time.parse(tweet.attrs[:created_at]) %>
-					<%= t.day %> <%= Date::MONTHNAMES[t.month] %>, <%= t.year %></p>
+				<span class="dated"><% t = Time.parse(tweet.attrs[:created_at]) %>
+					<%= t.day %> <%= Date::MONTHNAMES[t.month] %>, <%= t.year %></span></p>
 				<!-- 
 				<br />
 				Retweets: <%= tweet.attrs[:retweet_count] %><br />
