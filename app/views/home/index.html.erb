@@ -26,7 +26,8 @@ tweet_media = tweet.attrs[:entities][:media]
 				image_path = tweet_media.first[:media_url]
 				tweet_id = tweet.attrs[:id].to_s
 				status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id
-
+				time_added = Time.parse(tweet.attrs[:created_at])
+				ago = distance_of_time_in_words(time_added, Time.now)
 %>
 
 <li>
@@ -35,8 +36,7 @@ tweet_media = tweet.attrs[:entities][:media]
 		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
 			<div class="tweet">
 				<p><%= tweet.attrs[:text] %><br />
-				<span class="dated"><% t = Time.parse(tweet.attrs[:created_at]) %>
-					<%= t.day %> <%= Date::MONTHNAMES[t.month] %>, <%= t.year %></span></p>
+				<span class="dated"><%= ago %> ago</span></p>
 				<!-- 
 				<br />
 				Retweets: <%= tweet.attrs[:retweet_count] %><br />
