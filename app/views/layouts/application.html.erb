@@ -13,12 +13,15 @@
 </head>
 
 <body class="<%= @body_class %>">
+
 <nav>
 <ul>
 <li><%= link_to('The Gallery', root_path) %></li>
 <li><%= link_to('About this site', root_path + 'about') %></li>
 </ul>
 </nav>
+
+<h1><%= link_to('The View from Above', root_path) %></h1>
 
 <%= yield %>
 

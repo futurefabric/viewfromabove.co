@@ -6,14 +6,7 @@
 @import "vars";
 
 .about {
-	h1 {
-		font-size: 1em;
-		font-weight: 400;
-		padding: 20px;
-		color: $body;
-		text-transform: uppercase;
-		@media screen and (min-width: 600px) { font-size: 1em; }
-	}
+
 
 	h2 {
 		max-width: 850px;
@@ -24,11 +17,19 @@
 		@media screen and (min-width: 600px) { font-size: 2.5em; }
 	}
 
+	h2 a {
+		color: $links;
+	}
+
 	p {
 		font-size: 1.5em;
 		font-weight: 400;
 		padding:20px;
 		max-width:590px;
+	}
+
+	p a {
+		color: $links;
 	}
 
 	footer p {
