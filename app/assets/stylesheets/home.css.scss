@@ -77,6 +77,11 @@
 		opacity: 0;
 
 		@media screen and (min-width: 600px) { opacity: 0; }
+
+	}
+
+	.tweet p {
+		color:$links;
 	}
 
 	.dated {

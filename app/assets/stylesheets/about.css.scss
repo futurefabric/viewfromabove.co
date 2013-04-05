@@ -17,8 +17,14 @@
 		@media screen and (min-width: 600px) { font-size: 2.5em; }
 	}
 
-	h2 a {
+	h2 a,
+	p a {
 		color: $links;
+	}
+
+	h2 a:hover,
+	p a:hover {
+		color:$links_standout;
 	}
 
 	p {
@@ -26,10 +32,6 @@
 		font-weight: 400;
 		padding:20px;
 		max-width:590px;
-	}
-
-	p a {
-		color: $links;
 	}
 
 	footer p {

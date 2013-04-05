@@ -1,6 +1,10 @@
 
 @import "vars";
 
+html {
+	overflow-y: scroll;
+}
+
 body {
 	font-family: "soleil", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin:0; padding:0;
