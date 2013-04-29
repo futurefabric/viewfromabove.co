@@ -14,7 +14,13 @@ body {
 	letter-spacing:-0.5px;
 	background: $background;
 	color: $body;
+	visibility:hidden;
 }
+
+.wf-active body {
+	visibility:visible;	
+}
+
 
 a {
 	color: $links;
