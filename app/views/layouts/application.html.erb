@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The View From Above</title>
+<title>The View From Above : <%= params[:controller] %></title>
 
 <!--
 ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ 
@@ -28,8 +28,9 @@
 
 <nav>
 <ul>
-<li><%= link_to('The Gallery', root_path) %></li>
-<li><%= link_to('About this site', root_path + 'about') %></li>
+<li><%= link_to('The View', root_path, :class => is_current?("home")) %></li>
+<li><%= link_to('About this site', root_path + 'about', :class => is_current?("about")) %></li>
+<!-- <li><%= link_to('Learn More', root_path + 'references', :class => is_current?("references")) %></li> -->
 </ul>
 </nav>
 

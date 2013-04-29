@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+	def is_current?(page_name)
+  	"current" if params[:controller] == page_name
+	end
+
 	def blacklisted_tweet_ids(tweet_id)
 		# tweets we don't want to show (ie pics of Chris, etc)
 		# aspect ratio issues: 318477785662365696
