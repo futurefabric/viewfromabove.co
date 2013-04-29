@@ -16,8 +16,11 @@ tweet_media = tweet.attrs[:entities][:media]
 		if tweet_media != nil
 			id_str = tweet.attrs[:id].to_s
 			blacklisted = blacklisted_tweet_ids(id_str)
+			time_added = Time.parse(tweet.attrs[:created_at])
 			
-			if blacklisted != true
+			if time_added < (Time.now - 4.hours)
+			
+				if blacklisted != true
 
 				# we can show the tweet! it has media and isn't blacklisted :)
 				# increment the counter
@@ -26,10 +29,10 @@ tweet_media = tweet.attrs[:entities][:media]
 				image_path = tweet_media.first[:media_url]
 				tweet_id = tweet.attrs[:id].to_s
 				status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id
-				time_added = Time.parse(tweet.attrs[:created_at])
+				
 				ago = distance_of_time_in_words(time_added, Time.now)
 
-					if time_added < (Time.now - 4.hours)
+					
 %>
 
 <li>
