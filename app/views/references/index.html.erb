@@ -1,6 +1,15 @@
+
+<h2>
+The ISS orbits the Earth <%= orbits_per_day.ceil %> times a day and travels at a whopping <%= number_with_delimiter(kilometres_per_hour.ceil) %> km/h. Flying <%= orbit_altitude_in_kilometres %>km above Earth it takes <%= orbit_duration_hours_and_minutes %> to make a full orbit of <%= number_with_delimiter(orbit_distance_in_kilometres.ceil) %> km
+</h2>
+
+
+
 <%= image_tag('iss.jpg') %>
 
 <%= image_tag('chris_hadfield.jpg') %>
+
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/ISS_insignia.svg/484px-ISS_insignia.svg.png" />
 
 <h1>Video</h1>
 <iframe src="http://player.vimeo.com/video/61487989?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff" width="702" height="395" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

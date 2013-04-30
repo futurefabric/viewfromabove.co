@@ -1,3 +1,16 @@
 // Place all the styles related to the References controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "vars";
+
+.references {
+	h2 {
+		max-width: 850px;
+		font-size: 2em;
+		font-weight: 600;
+		padding: 20px;
+		color: $heading;
+		@media screen and (min-width: 600px) { font-size: 2.5em; }
+	}
+}
