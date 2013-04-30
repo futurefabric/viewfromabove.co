@@ -18,7 +18,7 @@ tweet_media = tweet.attrs[:entities][:media]
 			blacklisted = blacklisted_tweet_ids(id_str)
 			time_added = Time.parse(tweet.attrs[:created_at])
 			
-			if time_added < (Time.now - 4.hours)
+			if time_added < (Time.now - 8.hours)
 			
 				if blacklisted != true
 
