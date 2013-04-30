@@ -59,6 +59,19 @@ body {
 		font-size: 1em;
 	}
 
+	#canvas { 
+		background: #ccc;
+		display:none;
+		background: transparent;
+		position:absolute;
+		top:0; left:0;
+
+		@media screen and (min-width: 1200px) {
+			display:block;
+			z-index:-1;
+		}
+	}
+
 	.overview {
 		z-index:2;
 	}
