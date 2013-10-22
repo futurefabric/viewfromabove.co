@@ -12,11 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.fitvids.js
 //= require_tree .
 
 
 
-
+$(document).ready(function(){
+  // Target your .container, .wrapper, .post, etc.
+  $("#iss-video").fitVids();
+});
 
 // Google Analytics
 
@@ -28,3 +32,5 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-902179-20', 'herokuapp.com');
 ga('send', 'pageview');
 $(document).foundation();
+
+
