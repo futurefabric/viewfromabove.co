@@ -1,11 +1,16 @@
 
 <h2>
-The ISS orbits the Earth <span class="orbits-per-day"><%= orbits_per_day.ceil %> times a day</span> and travels at a whopping <%= number_with_delimiter(kilometres_per_hour.ceil) %> km/h. Flying <%= orbit_altitude_in_kilometres %>km above Earth it takes <%= orbit_duration_hours_and_minutes %> to make a full orbit of <%= number_with_delimiter(orbit_distance_in_kilometres.ceil) %> km
-</h2>
+The ISS <span class="orbits-per-day">orbits</span> the Earth <span class="orbits-per-day"><%= orbits_per_day.ceil %> times a day</span> and travels <span class="speed">at</span> a whopping <span class="speed"><%= number_with_delimiter(kilometres_per_hour.ceil) %> km/h</span>.</h2>
+
+<p>At an altitude of <%= orbit_altitude_in_kilometres %>km, it takes <%= orbit_duration_hours_and_minutes %> to make a full orbit of <%= number_with_delimiter(orbit_distance_in_kilometres.ceil) %> km
+</p>
 
 <section id="iss-video">
 	<iframe src="http://player.vimeo.com/video/61487989?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff" width="702" height="395" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </section>
+
+<h3>Time Lapse Earth</h3>
+<p>Watch this fantastic time-lapse for a new perspective on Earth. The video uses sequences put together by ISS astronauts and was edited by the talented <a href="https://vimeo.com/user4259037">Bruce W. Berry Jr</a>.</p>
 
 <% #= image_tag('iss.jpg', :class => "the-iss") %>
 

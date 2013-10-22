@@ -6,7 +6,6 @@
 
 .references {
 
-
 	h2 {
 		max-width: 850px;
 		font-size: 2em;
@@ -23,11 +22,37 @@
 		}
 	}
 
+	h3 {
+		padding-bottom:5px;
+	}
+
 	.the-iss {
 		width:100%;
 	}
 
 	.orbits-per-day {
 		color:#30C06A;
+	}
+
+	.speed {
+		color:#2ebae9;
+	}
+
+	p {
+		font-size: 1.35em;
+		line-height:1.45;
+		font-weight: 400;
+		padding: 20px 20px 10px 20px;
+		max-width:590px;
+
+		@media screen and (min-width: 1200px) {
+			padding: 20px 20px 10px 30px;
+		}
+	}
+
+	footer p {
+		font-size: 1em;
+		text-align:right;
+		max-width:none;
 	}
 }

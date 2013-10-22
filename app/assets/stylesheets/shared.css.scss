@@ -30,7 +30,7 @@ a {
 	text-decoration: none;
 }
 
-h1 {
+h1, h3 {
 	font-size: 1.5em;
 	font-weight: 600;
 	padding: 20px;
@@ -51,6 +51,7 @@ h2 {
 	color: $heading;
 	@media screen and (min-width: 600px) { font-size: 1.5em; }
 }
+
 
 footer p,
 p {
