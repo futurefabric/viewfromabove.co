@@ -41,10 +41,9 @@ tweet_media = tweet.attrs[:entities][:media]
 	<a href="<%= status_link %>" target="_blank">
 		<div class="aspectwrapper">
 		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
-			
+			<div class="twitter_user"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" class="twitter_profile_pic" /></div>
 
 			<div class="tweet">
-				<div class="twitter_user"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" class="twitter_profile_pic" /></div>
 				<p>
 					<%= tweet.attrs[:text].html_safe %><br />
 				<span class="dated"><%= ago %> ago</span></p>
