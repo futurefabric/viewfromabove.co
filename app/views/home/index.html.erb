@@ -41,7 +41,8 @@ tweet_media = tweet.attrs[:entities][:media]
 		<div class="aspectwrapper">
 		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
 			<div class="tweet">
-				<p><%= tweet.attrs[:user][:name] %>:<br />
+				<div class="twitter_user"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" class="twitter_profile_pic" /></div>
+				<p>
 					<%= tweet.attrs[:text] %><br />
 				<span class="dated"><%= ago %> ago</span></p>
 			
