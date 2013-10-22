@@ -26,7 +26,7 @@ class HomeController < ApplicationController
       twitter_nyberg_max_id = tweet_max_id.to_s
 
       # the point at which we need to paginate Cmdr_Hadfield's tweets
-      if tweet_max_id < "347467406974783488"
+      if tweet_max_id < twitter_hadfield_max_id
         twitter_hadfield_max_id = tweet_max_id.to_s
       end
 
@@ -42,7 +42,8 @@ class HomeController < ApplicationController
     @tweets_nyberg = Twitter.user_timeline(twitter_account_nyberg, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_nyberg_max_id, :since_id => twitter_nyberg_since_id)
 
     # collate users tweets together
-    @tweets = @tweets_nyberg.zip(@tweets_hadfield).flatten.compact
+   # @tweets = @tweets_nyberg.zip(@tweets_hadfield).flatten.compact
+    @tweets = @tweets_hadfield.zip(@tweets_nyberg).flatten.compact
 
     # sort tweets by date created
     @tweets.sort! { |a,b| b.created_at <=> a.created_at }
