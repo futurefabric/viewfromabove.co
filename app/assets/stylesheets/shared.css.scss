@@ -59,6 +59,11 @@ p {
 	font-size: 1em;
 }
 
+footer p {
+	text-align:right;
+	max-width:none;
+}
+
 nav {
 	//width: 100%;
 	padding:20px 0 40px 0;
@@ -90,6 +95,8 @@ nav ul li a:hover,
 
 footer {
 	margin:0 0 20px 0;
+	width:100%;
+	text-align:right;
 }
 
 
