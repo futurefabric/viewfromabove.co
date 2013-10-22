@@ -30,7 +30,7 @@ tweet_media = tweet.attrs[:entities][:media]
 
 				image_path = tweet_media.first[:media_url]
 				tweet_id = tweet.attrs[:id].to_s
-				status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id
+				status_link = "https://twitter.com/" + tweet.attrs[:user][:screen_name] + "/status/" + tweet_id
 				
 				ago = distance_of_time_in_words(time_added, Time.now)
 					
@@ -65,6 +65,9 @@ tweet_media = tweet.attrs[:entities][:media]
 	if counter == images_per_page
 		last_id = tweet.attrs[:id].to_s
 		break
+
+	else
+		last_id = tweet.attrs[:id].to_s
 	end
 
 	%>
@@ -74,5 +77,7 @@ tweet_media = tweet.attrs[:entities][:media]
 
 <section class="pagination">
 <p><%= link_to('◀ Previous ' + images_per_page.to_s + ' photos', root_path + 'from/' + last_id) %></p>
+<p>Counter = <%= counter %></p>
+<p>ID = <%= last_id %></p>
 </section>
 
