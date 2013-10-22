@@ -1,3 +1,5 @@
+<% #= debug @tweets %>
+
 <section class="gallery">
 <ul class="tweets">
 
@@ -31,7 +33,6 @@ tweet_media = tweet.attrs[:entities][:media]
 				status_link = "https://twitter.com/Cmdr_Hadfield/status/" + tweet_id
 				
 				ago = distance_of_time_in_words(time_added, Time.now)
-
 					
 %>
 
@@ -40,14 +41,16 @@ tweet_media = tweet.attrs[:entities][:media]
 		<div class="aspectwrapper">
 		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
 			<div class="tweet">
-				<p><%= tweet.attrs[:text] %><br />
+				<p><%= tweet.attrs[:user][:name] %>:<br />
+					<%= tweet.attrs[:text] %><br />
 				<span class="dated"><%= ago %> ago</span></p>
-				<!-- 
-				<br />
+			
+				<!--<br />
+				ID: <%= tweet.attrs[:id].to_s %><br />
 				Retweets: <%= tweet.attrs[:retweet_count] %><br />
 				Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
-				Dated: <%= tweet.attrs[:created_at] %><br/> 
-				-->
+				Dated: <%= tweet.attrs[:created_at] %><br/>--> 
+	
 			</div>
 		</div>
 		</div>
