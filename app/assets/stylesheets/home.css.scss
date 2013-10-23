@@ -32,14 +32,17 @@
 	.aspectwrapper {
 		width: 100%;
 		position: relative;
+		margin-bottom:120px;
+
+		@media screen and (min-width: 321px) { 
+			margin-bottom:0;
+		}
 	}
 
 	.aspectwrapper:after {
 		padding-top:66%;
 		display: block;
 		content: '';
-
-		@media screen and (min-width: 600px) { padding-top: 66%; }
 	}
 
 	.tweet_media {
@@ -48,10 +51,6 @@
 		bottom: 0;
 		right: 0;
 		left: 0;
-
-		@media screen and (min-width: 600px) { 
-
-		}
 	}
 
 	.tweet_media:hover {
@@ -70,22 +69,25 @@
 	}
 
 	.tweet {
-		display:block;
-		// height:90px;
-		background-color: $background;
-		position: absolute;
-		bottom: 0px;
+		display:inline-block;
+		position: relative;
 		width: 100%;
-		opacity: 0;
+		margin-top:35%;
 
-		@media screen and (min-width: 600px) { opacity: 0; }
+		@media screen and (min-width: 321px) { 
+			opacity: 0; 
+			margin-top:0;
+			background-color: $background;
+			position: absolute;
+			bottom: 0px;
+		}
 
 	}
 
 	.twitter_user {
 		display:block;
-		opacity: 0;
 		margin:20px;
+		opacity: 0;
 	}
 
 	.tweet p {
