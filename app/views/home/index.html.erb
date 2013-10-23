@@ -45,7 +45,7 @@ tweet_media = tweet.attrs[:entities][:media]
 
 			<div class="tweet">
 				<p>
-					<%= find_and_remove_url(tweet.attrs[:text].html_safe) %><br />
+					<%= find_and_remove_url(tweet.attrs[:text]).html_safe %><br />
 				<span class="dated"><%= ago %> ago</span></p>
 			
 				<!--<br />

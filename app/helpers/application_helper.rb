@@ -5,7 +5,7 @@ module ApplicationHelper
 	end
 
 	def find_and_remove_url(string)
-		string
+		string.gsub!(/(?:f|ht)tps?:\/[^\s]+/, '')
 	end
 
 	def blacklisted_tweet_ids(tweet_id)
