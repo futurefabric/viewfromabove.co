@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     twitter_hadfield_max_id = "334011022815944705"
 
     twitter_nyberg_since_id = "339350311237976064"
-    twitter_nyberg_max_id = twitter_end_id
+    twitter_nyberg_max_id = "399310043507486720"
     
 
     # a max_id has been passed through the url (from pagination link)
