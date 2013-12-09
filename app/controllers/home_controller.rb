@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     twitter_nyberg_since_id = "339350311237976064"
     twitter_nyberg_max_id = "399310043507486720"
 
-    twitter_mastracchio_since_id = "407883610188824576"
+    twitter_mastracchio_since_id = "402882298703396864"
     twitter_mastracchio_max_id = twitter_end_id
 
     
