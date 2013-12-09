@@ -20,82 +20,37 @@
 
 	ul.tweets {
 		overflow: hidden;
+		padding-right:20px;	
 	}
 
 	ul.tweets li {
 		display:block;
 		float:left;
-		
 		width:100%;
+		margin-bottom: 25px;
+
+		img {
+			padding-left:20px;
+
+			&.profile_pic {
+				float:left;
+				width:48px;
+				height:48px;
+				padding:0;
+				margin: 20px 0 0 20px;
+				border-radius:24px;
+			}
+		}
+
+		p {
+			float:left;
+			padding: 20px 15px;
+			max-width: 390px;
+		}
 
 		@media screen and (min-width: 600px) { width: 50%; }
-		@media screen and (min-width: 1200px) { width: 50%; }
+		@media screen and (min-width: 1280px) { width: 33.333333%; }
 		@media screen and (min-width: 1800px) { width: 33.333333%; }
-	}
-
-	.aspectwrapper {
-		width: 100%;
-		position: relative;
-		margin-bottom:140px;
-
-		@media screen and (min-width: 321px) { 
-			margin-bottom:0;
-		}
-	}
-
-	.aspectwrapper:after {
-		padding-top:66%;
-		display: block;
-		content: '';
-	}
-
-	.tweet_media {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-	}
-
-	.tweet_media:hover {
-
-		cursor: pointer;
-
-		.tweet,
-		.twitter_user {
-			-webkit-transition: opacity .15s ease;
-	    -moz-transition: opactiy .15s ease;
-	    -ms-transition: opacity .15s ease;
-	    -o-transition: opacity .15s ease;
-	    transition: opacity .15s ease;
-			opacity: 1;
-		}
-	}
-
-	.tweet {
-		display:inline-block;
-		position: relative;
-		width: 100%;
-		margin-top:35%;
-
-		@media screen and (min-width: 321px) { 
-			opacity: 0; 
-			margin-top:0;
-			background-color: $background;
-			position: absolute;
-			bottom: 0px;
-		}
-
-	}
-
-	.twitter_user {
-		display:block;
-		margin:20px;
-		opacity: 0;
-	}
-
-	.tweet p {
-		color:$links;
 	}
 
 	.dated {

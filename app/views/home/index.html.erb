@@ -5,7 +5,7 @@
 
 <% 
 counter = 0
-images_per_page = 24
+images_per_page = 30
 last_id = ''
 %>
 
@@ -38,26 +38,10 @@ tweet_media = tweet.attrs[:entities][:media]
 %>
 
 <li>
-	<a href="<%= status_link %>" target="_blank">
-		<div class="aspectwrapper">
-		<div class="tweet_media" style="background:url('<%= image_path %>') no-repeat; background-position: -2px -2px; background-size: 101% 101%;">
-			<div class="twitter_user"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" class="twitter_profile_pic" /></div>
-
-			<div class="tweet">
-				<p>
-					<%= find_and_remove_url(tweet.attrs[:text]).html_safe %><br />
-				<span class="dated"><%= ago %> ago</span></p>
-			
-				<!--<br />
-				ID: <%= tweet.attrs[:id].to_s %><br />
-				Retweets: <%= tweet.attrs[:retweet_count] %><br />
-				Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
-				Dated: <%= tweet.attrs[:created_at] %><br/>--> 
-	
-			</div>
-		</div>
-		</div>
-	</a>
+<img src="<%= image_path %>" />
+<a href="<%= status_link %>"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" width="48" height="48" class="profile_pic" /></a>
+<p><%= find_and_remove_url(tweet.attrs[:text]).html_safe %><br />
+<span class="dated"><a href="<%= status_link %>"><%= ago %> ago</a></span></p>
 </li>
 
 				<% end %>
