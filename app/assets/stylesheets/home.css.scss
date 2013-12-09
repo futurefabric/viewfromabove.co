@@ -13,14 +13,16 @@
 		clear:left;
 		margin-top:0;
 
-		@media screen and (min-width: 600px) {
+		@media screen and (min-width: 900px) {
 			margin-top:30px;
 		}
 	}
 
 	ul.tweets {
 		overflow: hidden;
-		padding-right:20px;	
+		padding:0;	
+
+		@media screen and (min-width: 900px) { padding-right:20px;	 }
 	}
 
 	ul.tweets li {
@@ -30,7 +32,7 @@
 		margin-bottom: 25px;
 
 		img {
-			padding-left:20px;
+			@media screen and (min-width: 900px) { padding-left:20px;	}
 
 			&.profile_pic {
 				float:left;
@@ -39,16 +41,18 @@
 				padding:0;
 				margin: 20px 0 0 20px;
 				border-radius:24px;
+				display:none;
+				@media screen and (min-width: 900px) { display:block; }
 			}
 		}
 
 		p {
 			float:left;
-			padding: 20px 15px;
-			max-width: 390px;
+			padding: 20px;
+			max-width: 350px;
 		}
 
-		@media screen and (min-width: 600px) { width: 50%; }
+		@media screen and (min-width: 900px) { width: 50%; }
 		@media screen and (min-width: 1280px) { width: 33.333333%; }
 		@media screen and (min-width: 1800px) { width: 33.333333%; }
 	}
