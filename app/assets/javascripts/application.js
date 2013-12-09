@@ -22,6 +22,11 @@ $(document).ready(function(){
   $("#iss-video").fitVids();
 });
 
+// Open outbound links in new window
+$("a").each(function(){
+	if (this.href.indexOf(location.hostname) == -1) { $(this).attr('target', '_blank'); } 
+});
+
 // Google Analytics
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
