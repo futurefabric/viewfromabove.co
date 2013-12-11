@@ -27,6 +27,14 @@ $("a").each(function(){
 	if (this.href.indexOf(location.hostname) == -1) { $(this).attr('target', '_blank'); } 
 });
 
+// packery
+var container = document.querySelector('.tweets');
+var pckry;
+// initialize Packery after all images have loaded
+imagesLoaded( container, function() {
+  pckry = new Packery( container );
+});
+
 // Google Analytics
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

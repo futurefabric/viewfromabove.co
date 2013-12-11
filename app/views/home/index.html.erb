@@ -1,7 +1,7 @@
 <% #= debug @tweets %>
 
 <section class="gallery">
-<ul class="tweets js-packery" data-packery-options='{ "itemSelector": ".gallery-item", "gutter": 0 }'>
+<ul class="tweets">
 
 <% 
 counter = 0
@@ -32,7 +32,7 @@ tweet_media = tweet.attrs[:entities][:media]
 				image_w = tweet_media.first[:sizes][:medium][:w].to_i
 				image_h = tweet_media.first[:sizes][:medium][:h].to_i
 				image_path_large = image_path  + ":large"
-				
+
 				tweet_id = tweet.attrs[:id].to_s
 				user_link = "https://twitter.com/" + tweet.attrs[:user][:screen_name]
 				status_link = user_link + "/status/" + tweet_id
