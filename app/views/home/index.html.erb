@@ -29,7 +29,10 @@ tweet_media = tweet.attrs[:entities][:media]
 				counter += 1
 
 				image_path = tweet_media.first[:media_url]
+				image_w = tweet_media.first[:sizes][:medium][:w].to_i
+				image_h = tweet_media.first[:sizes][:medium][:h].to_i
 				image_path_large = image_path  + ":large"
+				
 				tweet_id = tweet.attrs[:id].to_s
 				user_link = "https://twitter.com/" + tweet.attrs[:user][:screen_name]
 				status_link = user_link + "/status/" + tweet_id
@@ -42,7 +45,7 @@ tweet_media = tweet.attrs[:entities][:media]
 <img src="<%= image_path %>" />
 <a href="<%= status_link %>"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" width="48" height="48" class="profile_pic" /></a>
 <p><%= find_and_remove_url(tweet.attrs[:text]).html_safe %><br />
-<span class="dated"><a href="<%= status_link %>"><%= ago %> ago</a></span></p>
+<span class="dated"><a href="<%= status_link %>"><%= ago %> ago</a></span> <a href="<%= image_path_large %>">+</a></p>
 <!-- 
 Retweets: <%= tweet.attrs[:retweet_count] %><br />
 Favourited: <%= tweet.attrs[:favorite_count] %> times<br/> 
