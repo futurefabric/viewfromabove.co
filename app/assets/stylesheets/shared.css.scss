@@ -111,11 +111,16 @@ footer {
 }
 
 footer p {
+	opacity:0.3;
 	max-width:none;
 
 	text-align:left;
 	@media screen and (min-width: 600px) { 
 		text-align:right;
+	}
+
+	&:hover {
+		opacity:1;
 	}
 }
 
