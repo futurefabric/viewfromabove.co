@@ -38,7 +38,7 @@ var canvas = Raphael( svgEl, window.innerWidth - 16, window.innerHeight);
 
 //var canvas = Raphael( 0, 0, 600, 600 );
 //var pathstr = "M0,0L2500,200";
-var pathstr = "M-10,500C400,300,700,150,2500,250";
+var pathstr = "M-10,650C500,300,700,150,2500,250";
 
 var circle = canvas.circle( 0, 0, 2 ).attr( { fill: 'white' } );
 var path = arrowline( canvas, pathstr, 90000, { stroke: '#31283E', 'stroke-width': 1, 'fill-opacity': 0 }, null, circle );
