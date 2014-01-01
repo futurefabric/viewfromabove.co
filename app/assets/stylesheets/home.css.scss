@@ -37,8 +37,10 @@
 
 		img {
 			&.iss_photo {
-				&:hover {
-					cursor:pointer;
+				@media screen and (min-width: 900px) {
+					&:hover {
+						cursor:pointer;
+					}
 				}
 			}
 
