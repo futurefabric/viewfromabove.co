@@ -125,6 +125,7 @@ footer p {
 }
 
 .modal {
+	display:none;
 	position:fixed;
 	top:0;
 	left:0;
@@ -137,8 +138,12 @@ footer p {
 	padding:30px 60px;
 
 	img {
-		width:auto;
-		margin:0 auto;
+		margin:auto;
+		max-width:1200px;
+
+		&:hover {
+			cursor:pointer;
+		}
 	}
 }
 

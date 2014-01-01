@@ -36,6 +36,11 @@
 		}
 
 		img {
+			&.iss_photo {
+				&:hover {
+					cursor:pointer;
+				}
+			}
 
 			&.profile_pic {
 				float:left;
