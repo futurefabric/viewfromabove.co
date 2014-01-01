@@ -45,10 +45,10 @@ tweet_media = tweet.attrs[:entities][:media]
 
 <li class="gallery-item">
 <div class="inner">
-<img src="<%= image_path %>" />
+<a href="<%= image_path_large %>"><img src="<%= image_path %>" /></a>
 <a href="<%= status_link %>"><img src="<%= tweet.attrs[:user][:profile_image_url] %>" alt="<%= tweet.attrs[:user][:name] + ' (@' + tweet.attrs[:user][:screen_name] + ')' %>" title="<%= tweet.attrs[:user][:name] + ' (@' + tweet.attrs[:user][:screen_name] + ')' %>" width="48" height="48" class="profile_pic" /></a>
 <p><%= find_and_remove_url(tweet_text).html_safe %><br />
-<span class="dated"><a href="<%= status_link %>"><%= ago %> ago</a></span> <!-- <a href="<%= image_path_large %>">+</a> --></p>
+<span class="dated"><a href="<%= status_link %>"><%= ago %> ago</a></span></p>
 <!-- 
 Retweets: <%= tweet.attrs[:retweet_count] %><br />
 Favourited: <%= tweet.attrs[:favorite_count] %> times<br/> 
@@ -77,4 +77,8 @@ Favourited: <%= tweet.attrs[:favorite_count] %> times<br/>
 <section class="pagination">
 <p><%= link_to('← Older photos', root_path + 'from/' + last_id) %></p>
 </section>
+
+<div class="modal">
+	<img src="http://pbs.twimg.com/media/Bc5sXaVCQAAThqR.jpg:large" />
+</div>
 
