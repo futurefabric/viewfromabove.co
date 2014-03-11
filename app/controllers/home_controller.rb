@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     twitter_mastracchio_max_id = twitter_end_id
 
     twitter_hopkins_since_id = "403632722725179392"
-    twitter_hopkins_max_id = twitter_end_id
+    twitter_hopkins_max_id = "440967166444044288"
 
     twitter_wakata_since_id = "408004336472436736"
     twitter_wakata_max_id = twitter_end_id
