@@ -23,14 +23,14 @@ class HomeController < ApplicationController
     twitter_nyberg_max_id = "399310043507486720"
 
     twitter_mastracchio_since_id = "402882298703396864"
-    twitter_mastracchio_max_id = twitter_end_id
+    twitter_mastracchio_max_id = "466206745225093120"
 
     twitter_hopkins_since_id = "403632722725179392"
     twitter_hopkins_max_id = "440967166444044288"
 
     twitter_wakata_since_id = "408004336472436736"
-    twitter_wakata_max_id = twitter_end_id
-    
+    twitter_wakata_max_id = "466264417953673216"
+
 
     # a max_id has been passed through the url (from pagination link)
     if params[:max_id] != nil
