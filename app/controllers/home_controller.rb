@@ -45,6 +45,21 @@ class HomeController < ApplicationController
       twitter_wakata_max_id = tweet_max_id.to_s
       twitter_reid_max_id = tweet_max_id.to_s
 
+      # the point at which we need to paginate AstroIllinis's tweets
+      if tweet_max_id < twitter_hopkins_max_id
+        twitter_hopkins_max_id = tweet_max_id.to_s
+      end
+
+      # the point at which we need to paginate AstroRM's tweets
+      if tweet_max_id < twitter_mastracchio_max_id
+        twitter_mastracchio_max_id = tweet_max_id.to_s
+      end
+
+      # the point at which we need to paginate Astro_Wakata's tweets
+      if tweet_max_id < twitter_wakata_max_id
+        twitter_wakata_max_id = tweet_max_id.to_s
+      end
+
       # the point at which we need to paginate AstroKarenN's tweets
       if tweet_max_id < twitter_nyberg_max_id
         twitter_nyberg_max_id = tweet_max_id.to_s
@@ -65,15 +80,15 @@ class HomeController < ApplicationController
     # get the tweets
     #@tweets_hadfield = Twitter.user_timeline(twitter_account_hadfield, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_hadfield_max_id, :since_id => twitter_hadfield_since_id)
     #@tweets_nyberg = Twitter.user_timeline(twitter_account_nyberg, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_nyberg_max_id, :since_id => twitter_nyberg_since_id)
-    @tweets_mastracchio = Twitter.user_timeline(twitter_account_mastracchio, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_mastracchio_max_id, :since_id => twitter_mastracchio_since_id)
-    @tweets_hopkins = Twitter.user_timeline(twitter_account_hopkins, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_hopkins_max_id, :since_id => twitter_hopkins_since_id)
+    #@tweets_mastracchio = Twitter.user_timeline(twitter_account_mastracchio, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_mastracchio_max_id, :since_id => twitter_mastracchio_since_id)
+    #@tweets_hopkins = Twitter.user_timeline(twitter_account_hopkins, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_hopkins_max_id, :since_id => twitter_hopkins_since_id)
     @tweets_wakata = Twitter.user_timeline(twitter_account_wakata, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_wakata_max_id, :since_id => twitter_wakata_since_id)
     @tweets_reid = Twitter.user_timeline(twitter_account_reid, :exclude_replies => true, :include_rts => false, :count => 100, :max_id => twitter_reid_max_id, :since_id => twitter_reid_since_id)
 
 
     # collate users tweets together
-   #@tweets_hadfield.zip(@tweets_nyberg).zip(
-    @tweets = @tweets_mastracchio.zip(@tweets_hopkins).zip(@tweets_wakata).zip(@tweets_reid).flatten.compact
+    #@tweets_hadfield.zip(@tweets_nyberg).zip(@tweets_mastracchio).zip(@tweets_hopkins)
+    @tweets = @tweets_wakata.zip(@tweets_reid).flatten.compact
 
     # sort tweets by date created
     @tweets.sort! { |a,b| b.created_at <=> a.created_at }
