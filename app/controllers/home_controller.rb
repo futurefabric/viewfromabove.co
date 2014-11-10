@@ -33,7 +33,7 @@ class HomeController < ApplicationController
     twitter_wakata_max_id = "466264417953673216"
 
     twitter_reid_since_id = "477007500353736704"
-    twitter_reid_max_id = twitter_end_id
+    twitter_reid_max_id = "531127368287784962"
 
 
     # a max_id has been passed through the url (from pagination link)
